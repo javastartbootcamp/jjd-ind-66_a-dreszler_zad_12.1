@@ -2,6 +2,7 @@ class Operation {
     private double a;
     private String operator;
     private double b;
+    private double result;
     private static final String ADD = "+";
     private static final String SUBTRACT = "-";
     private static final String MULTIPLY = "*";
@@ -11,6 +12,7 @@ class Operation {
         this.a = a;
         this.operator = operator;
         this.b = b;
+        this.result = getResult();
     }
 
     private double getResult() {
@@ -30,12 +32,6 @@ class Operation {
 
     @Override
     public String toString() {
-        double result = -1;
-        try {
-            result = getResult();
-        } catch (IllegalArgumentException e) {
-            throw new IllegalArgumentException(e.getMessage());
-        }
         String stringA = a % 1 == 0 ? String.valueOf((int) a) : String.valueOf(a);
         String stringB = b % 1 == 0 ? String.valueOf((int) b) : String.valueOf(b);
         String resultAsString = result % 1 == 0 ? String.valueOf((int) result) : String.valueOf(result);
