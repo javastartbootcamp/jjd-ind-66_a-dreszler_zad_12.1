@@ -6,7 +6,8 @@ class Main {
             Operation[] operations = FileUtils.readOperations(fileName);
             calculator.printResults(operations);
             FileUtils.saveToFile(operations, "results.txt");
-        } catch (RuntimeException e) {
+        } catch (NullPointerException | FileReadFailureException | FileCreationFailureException |
+                 FileSaveFailureException e) {
             System.err.println(e.getMessage());
         }
     }

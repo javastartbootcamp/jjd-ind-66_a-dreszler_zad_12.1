@@ -37,8 +37,7 @@ class FileUtils {
         return operation;
     }
 
-    private static int countLines(String filePath) throws FileNotFoundException {
-        checkIfFilePathIsNull(filePath);
+    private static int countLines(String filePath) {
         int lines = 0;
         try (
                 Scanner input = new Scanner(new File(filePath))
@@ -73,7 +72,6 @@ class FileUtils {
     }
 
     private static void createFile(String fileName) {
-        checkIfFilePathIsNull(fileName);
         try {
             File file = new File(fileName);
 
